@@ -40,12 +40,10 @@ class GoogleImageSearch extends Command
 
         $html = [];
         foreach ($search_response->results as $result) {
-            // $text = '<a href="' . $result->link . '">' . $result->title . '</a>';
-            // $parse_mode = 'HTML';
-            $text = SearchResultTransformer::transform($result);
-            $parse_mode = 'HTML';
+            $caption = $result->title;
+            $photo = $result->link;
 
-            $this->replyWithMessage(compact('text', 'parse_mode'));
+            $this->replyWithPhoto(compact('photo', 'caption'));
         }
         $text = implode('', $html);
     }
