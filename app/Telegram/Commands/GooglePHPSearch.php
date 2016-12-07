@@ -43,7 +43,11 @@ class GooglePHPSearch extends Command
             $text = SearchResultTransformer::transform($result);
             $parse_mode = 'HTML';
 
-            $this->replyWithMessage(compact('text', 'parse_mode'));
+            try {
+                $this->replyWithMessage(compact('text', 'parse_mode'));
+            } catch (\Exception $exception) {
+                app('sentry')->captureException($exception);
+            }
         }
         $text = implode('', $html);
     }

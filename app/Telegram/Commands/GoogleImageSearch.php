@@ -42,8 +42,11 @@ class GoogleImageSearch extends Command
         foreach ($search_response->results as $result) {
             $caption = $result->title;
             $photo = $result->link;
-
-            $this->replyWithPhoto(compact('photo', 'caption'));
+            try {
+                $this->replyWithPhoto(compact('photo', 'caption'));
+            } catch (\Exception $exception) {
+                app('sentry')->captureException($exception);
+            }
         }
         $text = implode('', $html);
     }
