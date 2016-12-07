@@ -18,6 +18,10 @@ Route::get('/setWebhook', function () {
 	$response = Telegram::setWebhook(['url' => url('P31ZDkeJZU2UmsWoI7/webhook')]);
 	return 'ok';
 });
+Route::get('/removeWebhook', function () {
+	$response = Telegram::removeWebhook();
+	return 'ok';
+});
 Route::get('/getMessages', function () {
 	$updates = collect(Telegram::commandsHandler());
 
