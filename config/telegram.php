@@ -60,5 +60,7 @@ return [
         App\Telegram\Commands\GoogleSearch::class,
         App\Telegram\Commands\GoogleLaravelSearch::class,
         App\Telegram\Commands\GooglePHPSearch::class,
+        App\Telegram\Commands\GoogleImageSearch::class,
+        App\Telegram\Commands\GooglePublicImageSearch::class,
     ],
 ];
