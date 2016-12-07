@@ -180,6 +180,7 @@ return [
 
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
         App\GoogleCustomSearch\Providers\GoogleCustomSearchServiceProvider::class,
+         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
 
         'Telegram' => Telegram\Bot\Laravel\Facades\Telegram::class,
         'GoogleCSE' => App\GoogleCustomSearch\Facades\GoogleCSE::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
 
     ],
 
