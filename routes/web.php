@@ -47,7 +47,7 @@ Route::get('/getMessages', function () {
 
 // Example of POST Route:
 Route::post('/P31ZDkeJZU2UmsWoI7/webhook', function () {
-    $updates = Telegram::commandsHandler(true)
+    $updates = Telegram::commandsHandler(true);
 
     return 'ok';
 });
