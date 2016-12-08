@@ -53,9 +53,8 @@ Route::get('/getMessages', function () {
 Route::post('/P31ZDkeJZU2UmsWoI7/webhook', function () {
 	$update = Telegram::commandsHandler(true);
 
-	$message = $update->getMessage();
-	if($message->isType('inline_query')) {
-		$inline_query = $message->getInlineQuery();
+	if($update->isType('inline_query')) {
+		$inline_query = $update->getInlineQuery();
 		$options = [];
 
 		$query = $inline_query->getQuery();
