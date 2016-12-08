@@ -32,7 +32,7 @@ class GoogleLaravelSearch extends Command
             return $this->replyWithMessage(compact('text'));
         }
 
-        $search_response = GoogleCSE::search($arguments, 1, 3, ['siteSearch' => 'https://laravel.com/docs']);
+        $search_response = GoogleCSE::search($arguments, 1, 1, ['siteSearch' => 'https://laravel.com/docs']);
         if($search_response->total_results <= 0) {
             $text = 'Sorry no results.';
             return $this->replyWithMessage(compact('text'));

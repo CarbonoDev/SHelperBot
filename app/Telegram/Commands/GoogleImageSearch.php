@@ -31,7 +31,7 @@ class GoogleImageSearch extends Command
             return $this->replyWithMessage(compact('text'));
         }
 
-        $search_response = GoogleCSE::search($arguments, 1, 3, ['searchType' => 'image']);
+        $search_response = GoogleCSE::search($arguments, 1, 1, ['searchType' => 'image']);
 
         if($search_response->total_results <= 0) {
             $text = 'Sorry no results.';
