@@ -48,7 +48,7 @@ class GoogleCustomSearchServiceProvider extends ServiceProvider
     }
 
     /**
-     * Initialize Telegram Bot SDK Library with Default Config.
+     * Initialize GoogleCustomSearch with Default Config.
      *
      * @param Application $app
      */
