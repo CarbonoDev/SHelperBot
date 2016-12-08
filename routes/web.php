@@ -112,7 +112,7 @@ Route::post('/P31ZDkeJZU2UmsWoI7/webhook', function () {
 
 			$telegram_results = $results->map(function($result) {
 				$inline_query_result = new \Telegram\Bot\Objects\InlineQuery\InlineQueryResultArticle([
-					'id'                       => get64BitHash($result->link),
+					'id'                       => gmp_strval(gmp_init(substr(md5($result->link), 0, 16), 16), 10),
 					'title'                    => $result->title,
 					'url'                      => $result->link,
 					'description'              => $result->snippet,
