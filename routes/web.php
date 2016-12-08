@@ -67,7 +67,8 @@ Route::post('/P31ZDkeJZU2UmsWoI7/webhook', function () {
 
 		switch ($query_type) {
 			case 'i':
-				$options['search_type'] = 'image';
+				$options['searchType'] = 'image';
+				$options['fileType'] = 'jpg';
 				break;
 
 			case 'l':
@@ -79,7 +80,7 @@ Route::post('/P31ZDkeJZU2UmsWoI7/webhook', function () {
 				break;
 
 			case 'pi':
-				$options['search_type'] = 'image';
+				$options['searchType'] = 'image';
 				$options['rights'] = 'cc_publicdomain';
 				break;
 
